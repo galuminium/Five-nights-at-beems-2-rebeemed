@@ -870,6 +870,8 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
     ctx.drawImage(office, -cameraX/3,0, 2560, 1080);
     ctx.drawImage(powerConsumers[0] ? leftDoorClosed : leftDoorOpened, -cameraX/3 + 390, 180, 296, 902);
     ctx.drawImage(powerConsumers[1] ? rightDoorClosed : rightDoorOpened, -cameraX/3 + 1864, 180, 296, 902);
+
+    console.log(-cameraX/3 + 1330)
     if (powerConsumers[2]) {
         power += 0.36/FPS;
         cameraAnimationFrame[0]+= 120/FPS;
@@ -975,7 +977,6 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
                 }
             }
             if (ingameCharacters[i][0] == "bryan") {
-                console.log(-cameraX/3 + 1330)
                 ingameCharacters[i][1] -= 0.5 * ingameCharacters[i][3];
                 if (ingameCharacters[i][1] < 0) {
                     ingameCharacters[i][2]-= 1 * ingameCharacters[i][3];
