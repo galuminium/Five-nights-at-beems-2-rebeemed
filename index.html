@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Five Nights at Beems 2</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="titleScreen">
+        <button id="cheatButton" style="font-size: 0.25vw;" onclick="cheatsFunc();">unlock</button>
+        <button id="resetButton" style="font-size: 0.25vw;" onclick="resetProgress();">reset</button>
+        <div id="menuButtons">
+            <button id="nightsButton" onclick="nightSelectorOpen()">Nights</button>
+            <button id="settingsButton" onclick="settingsOpen()">Settings</button>
+            <button id="creditsButton" onclick="creditsOpen()">Credits</button>
+            <button id="customNightButton" onclick="customNightOpen()">Custom Night</button>
+        </div>
+        <div id="settings">
+            <div id="fpsDisplay">FPS: 120</div>
+            <input id="fpsInput" type="input"><br>
+            Music Toggle<input id="toggleMusic" type="checkbox" checked>
+            <h1>Controls:</h1>
+            left door: A<br>
+            right door: D<br>
+            mask: Spacebar<br>
+            flashlight: F<br>
+            Cameras: S<br><br><br>
+            <div id="timePlayedDiv" style="position:fixed; bottom:0px; left:0px;">Total Time: 0</div>
+            <div id="ingameTimePlayedDiv" style="position:fixed; bottom:16px; left:0px;">Ingame Time: 0</div>
+            <div id="deathCounterDiv" style="position:fixed; bottom:32px; left:0px;">Deaths: 0</div>
+
+        </div>
+        <div id="credits">
+            <h1>Credits</h1>
+            <h2>Bubzeee: Photoshop artist</h2>
+            <h2>Lucsaani: Making music</h2>
+            <h2>Walrusr: Too much aura</h2>
+            <h2>Wistfully: Brilliant idea</h2>
+            <h2>YourLocalGamer: Character idea</h2>
+            <h2>Galuminium: playtesting and grinding</h2>
+            <br>
+            <h1>Inspiration:</h1>
+            <h2>One More Night</h2>
+            <h2>Five Nights at The Gangs</h2>
+        </div>
+        <div id="nightSelector">
+            <button id="night1" onclick="selectNight(1)">Night 1</button>
+            <button id="night2" onclick="selectNight(2)">Night 2</button>
+            <button id="night3" onclick="selectNight(3)">Night 3</button>
+            <button id="night4" onclick="selectNight(4)">Night 4</button>
+            <button id="night5" onclick="selectNight(5)">Night 5</button>
+            <button id="night6" onclick="selectNight(6)">Night 6</button>
+        </div>
+        <canvas id="customNight" width="1920" height="1080"></canvas>
+        <div id="customNightChallenges">
+            <button id="challenge0" style="font-size: 1.2vw;" onclick="challengesSelect(0)">10/25</button>
+            <button id="challenge2" style="font-size: 1.2vw;" onclick="challengesSelect(2)">Meows Attack</button>
+            <button id="challenge3" style="font-size: 1.2vw;" onclick="challengesSelect(3)">Camamask</button><br>
+            <button id="challenge1" style="font-size: 2.3vw;" onclick="challengesSelect(1)">BEEMATHON</button>
+        </div>
+        <div id="thankYous">
+            <h1>thank you for playing FNaB2</h1>
+            <h2>i really hope you enjoyed playing this hot garbage of a game</h2>
+            <h2>and we want you to continue playing this game</h2>
+            <h2>there is an entire custom night waiting for you</h2>
+            <h3>good luck....</h3>
+            <button onclick="thankYou();">Close</button>
+        </div>
+    </div>
+    <canvas id="gameCanvas" width="1920" height="1080"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
