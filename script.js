@@ -908,7 +908,6 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
         firstCharacterTick = true;
         for (let i = 0; i<ingameCharacters.length; i++) {
             if (ingameCharacters[i][0] == "beems") {
-                console.log(ingameCharacters[i])
                 ingameCharacters[i][1] -= 0.5 * ingameCharacters[i][3];
                 if (!ingameCharacters[i][6]) {
                     ingameCharacters[i][7] = Math.round(Math.random());
@@ -976,16 +975,17 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
                 }
             }
             if (ingameCharacters[i][0] == "bryan") {
+                console.log(-cameraX/3 + 1330)
                 ingameCharacters[i][1] -= 0.5 * ingameCharacters[i][3];
                 if (ingameCharacters[i][1] < 0) {
                     ingameCharacters[i][2]-= 1 * ingameCharacters[i][3];
                     if (ingameCharacters[i][5] < 0.99) {ingameCharacters[i][5] += 0.01;}
                     if (!powerConsumers[2]) {
                         ctx.globalAlpha = ingameCharacters[i][5];
-                        ctx.drawImage(bryanCharacter,-cameraX/3 + 1330, 457, 135, 270);
+                        ctx.drawImage(bryanCharacter,-cameraX/3 + 1280 - 67 + Math.round(400*Math.sin(Date.now()/10)), 457, 135, 270);
                         ctx.globalAlpha = 1;
                     }
-                    if (powerConsumers[3] && distance(-cameraX/3 + 1330+67, 477+135, mouse.x, mouse.y) < 200) {
+                    if (powerConsumers[3] && distance(-cameraX/3 + 1280 - 67 + Math.round(400*Math.sin(Date.now()/10)), 477+135, mouse.x, mouse.y) < 200 && mask) {
                         ingameCharacters[i][4]--;
                         ingameCharacters[i][2] += 120/FPS * ingameCharacters[i][3];
                     }
