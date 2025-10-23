@@ -916,7 +916,7 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
                     ingameCharacters[i][6] = true;
                     ingameCharacters[i][2]-= 1 * ingameCharacters[i][3];
                     if (ingameCharacters[i][5] < 0.99) {ingameCharacters[i][5] += 0.01;}
-                    if (!powerConsumers[2] && !powerConsumers[0]) {
+                    if (!powerConsumers[2] && !powerConsumers[ingameCharacters[i][7]]) {
                         ctx.globalAlpha = ingameCharacters[i][5];
                         ctx.drawImage(beemsCharacter,-cameraX/3 + 430 + 1490 * ingameCharacters[i][7], 488, 200, 400);
                         ctx.globalAlpha = 1;
