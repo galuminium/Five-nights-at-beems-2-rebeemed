@@ -983,10 +983,10 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
                     if (ingameCharacters[i][5] < 0.99) {ingameCharacters[i][5] += 0.01;}
                     if (!powerConsumers[2]) {
                         ctx.globalAlpha = ingameCharacters[i][5];
-                        ctx.drawImage(bryanCharacter,-cameraX/3 + 1280 - 67 + Math.round(200*Math.sin(Date.now()/1000)), 457, 135, 270);
+                        ctx.drawImage(bryanCharacter,-cameraX/3 + 1280 - 67 + Math.round(200*Math.sin(Date.now()/400)), 457, 135, 270);
                         ctx.globalAlpha = 1;
                     }
-                    if (powerConsumers[3] && distance(-cameraX/3 + 1280 - 67 + Math.round(400*Math.sin(Date.now()/10)), 477+135, mouse.x, mouse.y) < 200 && mask) {
+                    if (powerConsumers[3] && distance(-cameraX/3 + 1280 - 67 + Math.round(200*Math.sin(Date.now()/400)), 477+135, mouse.x, mouse.y) < 200 && mask) {
                         ingameCharacters[i][4]--;
                         ingameCharacters[i][2] += 120/FPS * ingameCharacters[i][3];
                     }
