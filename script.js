@@ -918,7 +918,7 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
                         ctx.globalAlpha = 1;
                     }
                     if (powerConsumers[0] && cam == 0) {
-                        ingameCharacters[i][4]-=6;
+                        ingameCharacters[i][4]--;
                         ingameCharacters[i][2] += 120/FPS * ingameCharacters[i][3];
                     }
                     if (ingameCharacters[i][4] < 0) {
@@ -949,7 +949,7 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
                         ctx.globalAlpha = 1;
                     }
                     if (powerConsumers[1] && cam == 1) {
-                        ingameCharacters[i][4]-=6;
+                        ingameCharacters[i][4]--;
                         ingameCharacters[i][2]+= 120/FPS * ingameCharacters[i][3];
                     }
                     if (ingameCharacters[i][4] < 0) {
