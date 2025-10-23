@@ -917,7 +917,7 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
                         ctx.drawImage(beemsCharacter,-cameraX/3 + 430, 488, 200, 400);
                         ctx.globalAlpha = 1;
                     }
-                    if (powerConsumers[0]) {
+                    if (powerConsumers[0] && cam == 6) {
                         ingameCharacters[i][4]--;
                         ingameCharacters[i][2] += 120/FPS * ingameCharacters[i][3];
                     }
