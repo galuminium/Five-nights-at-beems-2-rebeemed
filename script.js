@@ -908,6 +908,7 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
         firstCharacterTick = true;
         for (let i = 0; i<ingameCharacters.length; i++) {
             if (ingameCharacters[i][0] == "beems") {
+                console.log(ingameCharacters[i])
                 ingameCharacters[i][1] -= 0.5 * ingameCharacters[i][3];
                 if (!ingameCharacters[i][6]) {
                     ingameCharacters[i][7] = Math.round(Math.random());
