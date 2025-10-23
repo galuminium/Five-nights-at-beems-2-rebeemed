@@ -909,15 +909,19 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
         for (let i = 0; i<ingameCharacters.length; i++) {
             if (ingameCharacters[i][0] == "beems") {
                 ingameCharacters[i][1] -= 0.5 * ingameCharacters[i][3];
+                if (!ingameCharacters[i][6]) {
+                    ingameCharacters[i][7] = Math.round(Math.random());
+                }
                 if (ingameCharacters[i][1] < 0) {
+                    ingameCharacters[i][6] = true;
                     ingameCharacters[i][2]-= 1 * ingameCharacters[i][3];
                     if (ingameCharacters[i][5] < 0.99) {ingameCharacters[i][5] += 0.01;}
                     if (!powerConsumers[2] && !powerConsumers[0]) {
                         ctx.globalAlpha = ingameCharacters[i][5];
-                        ctx.drawImage(beemsCharacter,-cameraX/3 + 430, 488, 200, 400);
+                        ctx.drawImage(beemsCharacter,-cameraX/3 + 430 + 1490 * ingameCharacters[i][7], 488, 200, 400);
                         ctx.globalAlpha = 1;
                     }
-                    if (powerConsumers[0] && cam == 0) {
+                    if (powerConsumers[0]) {
                         ingameCharacters[i][4]--;
                         ingameCharacters[i][2] += 120/FPS * ingameCharacters[i][3];
                     }
@@ -929,6 +933,7 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
                         beemsLeave.pause();
                         beemsLeave.currentTime = 0;
                         beemsLeave.play();
+                        ingameCharacters[i][6] = false;
                     }
                     if(ingameCharacters[i][2] < 0) {
                         deathState = true;
