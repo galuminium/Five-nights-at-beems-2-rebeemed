@@ -871,7 +871,7 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
     ctx.drawImage(powerConsumers[0] ? leftDoorClosed : leftDoorOpened, -cameraX/3 + 390, 180, 296, 902);
     ctx.drawImage(powerConsumers[1] ? rightDoorClosed : rightDoorOpened, -cameraX/3 + 1864, 180, 296, 902);
 
-    console.log(-cameraX/3 + 1330)
+    console.log(distance(-cameraX/3 + 1280 - 67 + Math.round(200*Math.sin(Date.now()/400)), 477+135, mouse.x, mouse.y)
     if (powerConsumers[2]) {
         power += 0.36/FPS;
         cameraAnimationFrame[0]+= 120/FPS;
