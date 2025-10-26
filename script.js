@@ -263,11 +263,11 @@ function resetCharacters() {
         ["jolly beems", Math.random() * 20*FPS + 6*FPS, 10*FPS, 1, 0.75*FPS,0], // animation
         ["bryan", Math.random() * 20*FPS + 10*FPS, 7*FPS, 1, 1*FPS,0], // animation
         ["jane", Math.random() * 20*FPS + 10*FPS, 2*FPS, 1, 0.5*FPS, 0], // glitchAnimation
-        ["bubzeee", Math.random() * 20*FPS + 10*FPS, 10*FPS, 1, Math.round(Math.random() * 2 + 2),false], // wigCam | wigTaken
+        ["bubzeee", Math.random() * 20*FPS + 10*FPS, 10*FPS, 1, Math.round(Math.random() * 6),false], // wigCam | wigTaken
         ["zennix", 0, 0, 1, 999999*FPS],
         ["local", 0, 1.5*FPS, 1, 0, false], // active
         ["noah", Math.random() * 20*FPS + 10*FPS,8*FPS,1,0.25*FPS,401,false,0], // x | side | animation
-        ["glitch", Math.random() * 20*FPS + 10*FPS,10*FPS,1,0, Math.round(Math.random()*2)], // cam
+        ["glitch", Math.random() * 20*FPS + 10*FPS,10*FPS,1,0, Math.round(Math.random() * 6)], // cam
         ["serbian", Math.random() * 20*FPS + 10*FPS,8*FPS,1,0.75*FPS],
     ] // killtimers: beems 1.7 | jolly beems 2.8 | bryan 2.0 | jane 0.5 | bubzeee 10 | zennix ? | local 0.4 | noah 2.2 | glitch 10 | serbian 2.2
 }
@@ -870,8 +870,7 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
     ctx.drawImage(office, -cameraX/3,0, 2560, 1080);
     ctx.drawImage(powerConsumers[0] ? leftDoorClosed : leftDoorOpened, -cameraX/3 + 390, 180, 296, 902);
     ctx.drawImage(powerConsumers[1] ? rightDoorClosed : rightDoorOpened, -cameraX/3 + 1864, 180, 296, 902);
-
-    console.log(distance(-cameraX/3 + 1280 - 67 + Math.round(200*Math.sin(Date.now()/400)), 477+135, mouse.x, mouse.y))
+    
     if (powerConsumers[2]) {
         power += 0.36/FPS;
         cameraAnimationFrame[0]+= 120/FPS;
@@ -1057,7 +1056,7 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
                         thankYouKindSir.play();
                         ingameCharacters[i][1] = Math.random() * 20*FPS + 10*FPS;
                         ingameCharacters[i][2] = 10*FPS;
-                        ingameCharacters[i][4] = Math.round(Math.random() * 2 + 2)
+                        ingameCharacters[i][4] = Math.round(Math.random() * 6)
                         ingameCharacters[i][5] = false;
                     }
                     if(ingameCharacters[i][2] < 0) {
@@ -1151,26 +1150,15 @@ function updateGame() { // ENTIRE INGAME |||||||||||||||||||||||||||||||||||||||
                 }
                 if (ingameCharacters[i][1] < 0) {
                     ingameCharacters[i][2] -= 1;
-                    if (ingameCharacters[i][5] >= 2) {
-                        if (powerConsumers[2] && cam == 6 && cameraAnimationFrame[0] > 25) {
-                            ctx.drawImage(glitchCharacter,canvas.width / 2,canvas.height / 2+200,250,250);
-                            if (collide(mouse.x,mouse.y,1,1,canvas.width / 2,canvas.height / 2+200,250,250) && frameClick) {
-                                ingameCharacters[i][1] = Math.random() * 20*FPS + 10*FPS;
-                                ingameCharacters[i][2] = 10*FPS;
-                                ingameCharacters[i][5] = Math.round(Math.random()*3);
-                            }
-                        }
-
-                    } else {
-                        if (powerConsumers[2] && cam == ingameCharacters[i][5] && cameraAnimationFrame[0] > 25) {
-                            ctx.drawImage(glitchCharacter,canvas.width / 2,canvas.height / 2,250,250);
-                            if (collide(mouse.x,mouse.y,1,1,canvas.width / 2,canvas.height / 2,250,250) && frameClick) {
-                                ingameCharacters[i][1] = Math.random() * 20*FPS + 10*FPS;
-                                ingameCharacters[i][2] = 10*FPS;
-                                ingameCharacters[i][5] = Math.round(Math.random()*3);   
-                            }
+                    if (powerConsumers[2] && cam == ingameCharacters[i][5] && cameraAnimationFrame[0] > 25) {
+                        ctx.drawImage(glitchCharacter,canvas.width / 2,canvas.height / 2,250,250);
+                        if (collide(mouse.x,mouse.y,1,1,canvas.width / 2,canvas.height / 2,250,250) && frameClick) {
+                            ingameCharacters[i][1] = Math.random() * 20*FPS + 10*FPS;
+                            ingameCharacters[i][2] = 10*FPS;
+                            ingameCharacters[i][5] = Math.round(Math.random() * 6);   
                         }
                     }
+                    
                     if(ingameCharacters[i][2] < 0) {
                         deathState = true;
                         deathBy = ingameCharacters[i][0]
