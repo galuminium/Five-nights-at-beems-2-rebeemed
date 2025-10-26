@@ -439,9 +439,6 @@ function updateMenu() {
     }
     cnCtx.fillStyle = "white";
     
-    if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
-    if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
-    
     for (let i = 0; i<characters.length; i++) {
         if (i > 4) {
             customNightA[0] = 305*5;
@@ -468,6 +465,9 @@ function updateMenu() {
                 customNightDifficulty[i] -= 0.1;
                 frameClick = false;
                 if (customNightDifficulty[i] < 0.9) {customNightDifficulty[i] = 0.9;}
+
+                if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
+                if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
             }
             cnCtx.fillStyle = "green";
             cnCtx.font = "30px FnafFont";
@@ -481,6 +481,9 @@ function updateMenu() {
         if (collide(cnMouse.x,cnMouse.y,1,1,300 + i*305 - customNightA[0],245 + customNightA[1],25,40) && frameClick && inMenus[3] || customNightClickSpeed[0] < 0 && click && inMenus[3] && collide(cnMouse.x,cnMouse.y,1,1,300 + i*305 - customNightA[0],245 + customNightA[1],25,40)) {
             if (customNightDifficulty[i] < 4.9) {
                 customNightDifficulty[i] += 0.1
+
+                if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
+                if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
             }
         }
     }
@@ -592,6 +595,9 @@ function challengesSelect(challengeId) {
     }
     customNightLength = challenges[challengeId][1];
     customNightPower = challenges[challengeId][2];
+
+    if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
+    if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
 }
 let a = 0;
 function startCustomNight() {
