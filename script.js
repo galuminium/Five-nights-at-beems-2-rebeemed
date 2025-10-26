@@ -371,7 +371,7 @@ function updateMenu() {
             customNightDifficulty[i] -= 0.1;
             if (customNightDifficulty[i] < 0.9) {customNightDifficulty[i] = 0.9;}
         }
-        cnCtx.filter = null;
+        cnCtx.filter = "none";
         if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
         if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
     }
@@ -387,7 +387,7 @@ function updateMenu() {
                 customNightDifficulty[i] += 0.1
             }
         }
-        cnCtx.filter = null;
+        cnCtx.filter = "none";
         if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
         if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
     }
@@ -472,7 +472,7 @@ function updateMenu() {
                 frameClick = false;
                 if (customNightDifficulty[i] < 0.9) {customNightDifficulty[i] = 0.9;}
 
-                cnCtx.filter = null;
+                cnCtx.filter = "none";
                 if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
                 if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
             }
@@ -489,7 +489,7 @@ function updateMenu() {
             if (customNightDifficulty[i] < 4.9) {
                 customNightDifficulty[i] += 0.1
 
-                cnCtx.filter = null;
+                cnCtx.filter = "none";
                 if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
                 if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
             }
