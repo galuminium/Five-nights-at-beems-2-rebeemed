@@ -604,6 +604,7 @@ function challengesSelect(challengeId) {
     customNightLength = challenges[challengeId][1];
     customNightPower = challenges[challengeId][2];
 
+    cnCtx.filter = "none";
     if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
     if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
 }
