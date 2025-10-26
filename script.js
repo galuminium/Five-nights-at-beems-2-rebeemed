@@ -418,8 +418,20 @@ function updateMenu() {
     cnCtx.font = "40px FnafFont";
     cnCtx.fillText("Duration", 1615, 720);
     cnCtx.fillText(`${customNightLength}s`, 1615, 770);
-    if (collide(cnMouse.x,cnMouse.y,1,1,1850,650,50,50) && frameClick && inMenus[3] || customNightClickSpeed[0] < 0 && click && inMenus[3] && collide(cnMouse.x,cnMouse.y,1,1,1850,650,50,50)) {customNightLength++;}
-    if (collide(cnMouse.x,cnMouse.y,1,1,1850,700,50,50) && frameClick && inMenus[3] && customNightLength > 1 || customNightLength > 1 && customNightClickSpeed[0] < 0 && click && inMenus[3] && collide(cnMouse.x,cnMouse.y,1,1,1850,700,50,50)) {customNightLength--;}
+    if (collide(cnMouse.x,cnMouse.y,1,1,1850,650,50,50) && frameClick && inMenus[3] || customNightClickSpeed[0] < 0 && click && inMenus[3] && collide(cnMouse.x,cnMouse.y,1,1,1850,650,50,50)) {
+        customNightLength++;
+
+        cnCtx.filter = "none";
+        if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
+        if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
+    }
+    if (collide(cnMouse.x,cnMouse.y,1,1,1850,700,50,50) && frameClick && inMenus[3] && customNightLength > 1 || customNightLength > 1 && customNightClickSpeed[0] < 0 && click && inMenus[3] && collide(cnMouse.x,cnMouse.y,1,1,1850,700,50,50)) {
+        customNightLength--;
+
+        cnCtx.filter = "none";
+        if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
+        if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
+    }
     cnCtx.fillStyle = "black";
     cnCtx.fillRect(1600,500,300,100); // power
     cnCtx.font = "40px FnafFont";
@@ -429,8 +441,20 @@ function updateMenu() {
     cnCtx.font = "40px arial";
     cnCtx.fillText('▲', 1852,390+150);
     cnCtx.fillText('▼', 1852,440+150);
-    if (collide(cnMouse.x,cnMouse.y,1,1,1850,500,50,50) && frameClick && inMenus[3] || customNightClickSpeed[0] < 0 && click && inMenus[3] && collide(cnMouse.x,cnMouse.y,1,1,1850,500,50,50)) {customNightPower++;}
-    if (collide(cnMouse.x,cnMouse.y,1,1,1850,550,50,50) && frameClick && inMenus[3] && customNightPower > 0 || customNightPower > 0 && customNightClickSpeed[0] < 0 && click && inMenus[3] && collide(cnMouse.x,cnMouse.y,1,1,1850,550,50,50)) {customNightPower--;}
+    if (collide(cnMouse.x,cnMouse.y,1,1,1850,500,50,50) && frameClick && inMenus[3] || customNightClickSpeed[0] < 0 && click && inMenus[3] && collide(cnMouse.x,cnMouse.y,1,1,1850,500,50,50)) {
+        customNightPower++;
+
+        cnCtx.filter = "none";
+        if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
+        if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
+    }
+    if (collide(cnMouse.x,cnMouse.y,1,1,1850,550,50,50) && frameClick && inMenus[3] && customNightPower > 0 || customNightPower > 0 && customNightClickSpeed[0] < 0 && click && inMenus[3] && collide(cnMouse.x,cnMouse.y,1,1,1850,550,50,50)) {
+        customNightPower--;
+
+        cnCtx.filter = "none";
+        if (isCustomNightMatchingChallenge(0)) {cnCtx.filter = 'grayscale(200%) contrast(500%) saturate(200%)';}
+        if (isCustomNightMatchingChallenge(1)) {cnCtx.filter = 'sepia(1) hue-rotate(-50deg) contrast(500%) saturate(500%)';}
+    }
 
     cnCtx.font = "40px FnafFont";
     cnCtx.fillStyle = "black";
